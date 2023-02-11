@@ -1,0 +1,9 @@
+<img data-arrowMoveUp src="/img/icons/common/arrowMove.png">
+
+<script>
+    window.addEventListener('click', function(event) {
+        if (event.target.hasAttribute('data-arrowMoveUp')) {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    })
+</script>

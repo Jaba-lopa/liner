@@ -1,0 +1,36 @@
+.find-out-seats {
+    background: linear-gradient(90deg, rgba(0,0,0,0.5), rgba(0,0,0,0)) , url('/img/find-out-seats/find-out-seats-fon.png');
+    height: 750px;
+}
+
+.find-out-seats-main {
+    display: flex;
+    align-items: center;
+    height: 750px;
+}
+
+.find-out-seats-main h2, .find-out-seats-main p {
+    color: #fff;
+    padding: 0.6rem 0;
+}
+
+.find-out-seats-main h2 {
+    font-size: 2.3rem;
+}
+
+.find-out-seats-main p{
+    font-size: 1.6rem;
+}
+
+.find-out-seats-main > div > div > p {
+    margin-left: 5px;
+    font-size: 1.1rem;
+    padding: 1.1rem 1.9rem;
+    cursor: pointer;
+}
+
+.find-out-seats-main > div > div {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}

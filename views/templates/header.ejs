@@ -1,0 +1,111 @@
+<header>
+    <div class="main-content-center">
+        <div class="section-logo">
+            <a href="/"><img class="logo" src="/img/header/logo.png">
+                <div class="log-name">
+                    <h1>Лайнер</h1>
+                    <p>круиз по чёрному морю</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="section-nav">
+            <nav>
+                <ul>
+
+                    <a href="/">
+                        <li>Главная</li>
+                    </a>
+                    <p>
+                        <li data-menu="info">О круизе</li>
+                    </p>
+                    <p>
+                        <li data-menu="galery">Фотогалерея</li>
+                    </p>
+                    <p>
+                        <li data-menu="cabins">Каюты</li>
+                    </p>
+                    <p>
+                        <li data-menu="contacts">Контакты</li>
+                    </p>
+
+                </ul>
+            </nav>
+        </div> 
+
+        <div class="section-booking">
+            <a href="/bookingSeats" class="button button-blue flare-button">
+                Бронирование
+                <span class="flare-white"></span>
+            </a>
+        </div>
+
+        <div class="section-hidden-menu">
+            <p>
+                <img data-hidden="hiddenMenu"  src="/img/header/menu.png">
+            </p>
+        </div>
+
+        <div class="section-hidden-nav">
+
+            <div>
+
+                <div class="hidden-close">
+                    <img src="/img/header/close.png" data-hidden="close">
+                </div>
+
+                <div class="hidden-menu">
+                    <ul>
+                        <a href="/"><li>Главная</li></a>
+                        <li data-menu="info" data-hidden>О круизе</li>
+                        <li data-menu="galery" data-hidden>Фотогалерея</li>
+                        <li data-menu="cabins" data-hidden>Каюты</li>
+                        <li data-menu="contacts" data-hidden>Контакты</li>
+                    </ul>
+                </div>
+
+                <div class="hidden-booking">
+                    <a href="/bookingSeats" class="button button-blue flare-button">
+                        Бронирование
+                        <span class="flare-white"></span>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</header>
+
+<script>
+    window.addEventListener('click', function(event) {
+        if (event.target.hasAttribute('data-menu')) {
+            
+            if (event.target.hasAttribute('data-hidden')) {
+                document.querySelector('.section-hidden-nav').style.transform = "translateY(-200%)";
+                document.querySelector('body').style.overflow = "auto";
+            }
+
+            if (event.target.dataset.menu === 'cabins') {
+                document.querySelector('.cabins').scrollIntoView({block: "center", behavior: 'smooth'});
+            } else if (event.target.dataset.menu === "galery"){
+                document.querySelector('.page-photo-galery').scrollIntoView({block:'center', behavior: 'smooth'});
+            } else if (event.target.dataset.menu === "info") {
+                document.querySelector('.description').scrollIntoView({block: 'center', behavior: "smooth"});
+            } else {
+                document.querySelector('footer').scrollIntoView({behavior: 'smooth'});
+            }
+
+        }
+
+        if (event.target.dataset.hidden === "hiddenMenu") {
+            document.querySelector('.section-hidden-nav').style.transform = "translateY(0%)";
+            document.querySelector('body').style.overflow = "hidden";
+        }
+        if (event.target.dataset.hidden === "close") {
+            document.querySelector('.section-hidden-nav').style.transform = "translateY(-200%)";
+            document.querySelector('body').style.overflow = "auto";
+        }
+    });
+</script>

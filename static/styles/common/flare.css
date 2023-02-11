@@ -1,0 +1,16 @@
+.flare-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.flare-white {
+    position: absolute;
+    height: 100%;
+    width: 55px;
+    transform: skewX(45deg);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+    animation: white-flare 5s linear infinite;
+}

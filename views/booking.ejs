@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Бронирование каюты на лайнере "название"</title>
+    <%- include('./templates/common/link-common.ejs') %>
+    <link rel="stylesheet" href="/styles/booking/booking.css">
+    <link rel="stylesheet" href="/styles/common/keyframes.css">
+    <link rel="stylesheet" href="/styles/common/media.css">
+</head>
+<body>
+    <div>
+
+        <div class="header header-white-fon" style="padding: 25px 0;">
+            <%- include('./templates/header.ejs') %>
+        </div>
+
+        <main>
+
+            <div class="booking-main">
+                <div class="main-content-center">
+    
+                    <h2>Бронирование</h2>
+                    <div>
+                        <form method="post">
+    
+                            <div class="booking-all">
+    
+                                    <label for="">ФАМИЛИЯ ИМЯ 
+                                        <input name="title" type="text" required placeholder="ФИО*">
+                                    </label>
+    
+                                    <label for="">ТЕЛЕФОН
+                                        <input name="phone" type="text" required placeholder="Телефон*">
+                                    </label>
+    
+                                    <label for="">ЭЛ.ПОЧТА (НЕ ОБЯЗАТЕЛЬНО)
+                                        <input name="email" type="email" placeholder="Ваш E-mail">
+                                    </label>
+    
+                                    <label for="">ДАТА ОТПРАВЛЕНИЯ
+                                        <input name="date" required min="2022-11-03" max="2030-12-31" type="date">
+                                    </label>
+    
+                                    <label for="">ПОРТ ОТПРАВЛЕНИЯ                                    
+                                        <select name="city" class="booking-list-city">
+                                            <option value="Сочи">Сочи</option>
+                                            <option value="Севастополь">Севастополь</option>
+                                            <option value="Ялта">Ялта</option>
+                                            <option value="Новороссийск">Новороссийск</option>
+                                        </select>
+                                    </label>
+    
+                                    <label for="">ПОЖЕЛАНИЯ (НЕ ОБЯЗАТЕЛЬНО)
+                                        <input name="wish" type="text" placeholder="Пожелания">
+                                    </label>
+    
+                            </div>
+    
+                            <div class="booking-consent">
+                                <input required class="consent" type="checkbox">
+                                <span>Даю свое <a href="">согласие на обработку персональных данных</a> в соответствии с <a href="">политикой работы с персональными данными</a></span>  
+                            </div>
+    
+                            <div class="booking-error">
+                                <% if (thanks.text) { %>
+                                    <p class="booking-success" style="border: 2px solid #00b300;display: block;"><%= thanks.text %></p>
+                                <% } %>
+                            </div>
+    
+                            <div class="booking-send">
+                                <button data-booking type="submit" class="button-blue button-hover-black">Запросить стоимость</button>
+                            </div>
+    
+                        </form>
+    
+                    </div>
+    
+                </div>
+            </div>
+
+        </main>
+
+
+        <footer>
+            <%- include('./templates/footer.ejs') %>
+        </footer>
+
+    </div>
+
+    <script>
+        const listCity = document.querySelector(`input[name='city']`);
+
+        const cityChange = (city) => {
+            listCity.value = city;
+        }
+
+        window.addEventListener('click', function(event){
+            if (event.target.hasAttribute('data-listCity')) {
+                cityChange(event.target.dataset.listcity);
+            }
+        })
+    </script>
+</body>
+</html>

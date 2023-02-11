@@ -1,0 +1,49 @@
+footer {
+    background-color: black;
+    font-size: 1rem;
+}
+
+footer h2, footer p, footer li, footer a, footer h4{
+    color: #fff;
+    font-weight: 500;
+}
+
+footer > div {
+    padding: 40px 0;
+}
+
+.footer-up, .footer-under {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-up-title {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+}
+
+.footer-title {
+    display: flex;
+    align-items: center;
+}
+
+.footer-menu-1 > ul > li > a, .footer-menu-2 > ul > li > a {
+    font-size: 1em;
+}
+
+.footer-menu-1 > ul > li , .footer-menu-2 > ul > li {
+    padding: 0 0 10px 0;
+}
+
+.footer-mail > h2 {
+    font-size: 1em;
+}
+
+.footer-under {
+    margin-top: 20px;
+}
+
+.footer-under > h2 {
+    font-size: 0.9em;
+}

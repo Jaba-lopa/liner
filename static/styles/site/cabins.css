@@ -1,0 +1,26 @@
+.cabins-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 10px;
+    justify-content: space-between;
+}
+
+.cabins-main > div a:hover h3 {
+    transition: 0.2s;
+    color: #00bfff;
+}
+
+.cabins-main > div img {
+    width: 100%;
+}
+
+.cabins-main > div h3 {
+    padding: 10px 0;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.cabins-main > div p {
+    color: grey;
+    font-size: 1rem;
+}

@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+html {
+    font-size: 18px;
+}
+
+h1, h2, h3, h4, h5, h6, a, p, li, ul, label, input, span {
+    font-family: sans-serif;
+    color: black;
+    list-style-type: none;
+    text-decoration: none;
+}
+.block-indent {
+    margin-bottom: 100px;
+}
+
+.img-scale {
+    transition: transform 0.4s;
+}
+
+.block-img-scale {
+    overflow: hidden;
+}
+
+.img-scale:hover {
+    transform: scale(1.1);
+}
+
+.main-content-center {
+    width: 60%;
+    margin: 0 auto;
+}

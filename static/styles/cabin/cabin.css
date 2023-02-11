@@ -1,0 +1,57 @@
+.cabin-main {
+    padding: 40px 0;
+}
+
+.cabin-main > div > h2 {
+    font-size: 2.8rem;
+    font-weight: 500;
+    padding: 40px 0;
+}
+
+.cabin-main > div > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 10px;
+}
+
+.cabin-galery > img {
+    width: 100%;
+    max-width: 550px;
+}
+
+.cabin-info {
+    padding: 10px 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.cabin-info-main > ul {
+    padding: 10px 0 10px 40px;
+}
+
+.cabin-info-main > ul > li {
+    list-style-type: disc;
+    padding: 2px 0;
+}
+
+.cabin-info-price {
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cabin-info-price > a {
+    padding: 15px 20px;
+}
+
+.cabin-info-price > div {
+    display: flex;
+    font-size: 1.2rem;
+    padding-left: 20px;
+}
+
+.cabin-info-price > div > h3 {
+    padding: 0 0 0 20px;
+    color: #00bfff;
+}

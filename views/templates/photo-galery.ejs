@@ -1,0 +1,125 @@
+<div class="main-content-center galery-title">
+    <h2>Фотогалерея</h2>
+    <div>
+        <button data-action="galeryLeft"><img data-action="galeryLeft" src="/img/icons/galery/arrow.png" style="transform: rotate(180deg);"></button>
+        <button data-action="galeryRight"><img data-action="galeryRight" src="/img/icons/galery/arrow.png"></button>
+    </div>
+</div>
+
+<div class="main-content-center galery-slider">
+    <div>
+        <img id="firstSlide-original" src="/img/liner-photo/room.png" class="original-slide">
+        <img src="/img/liner-photo/room-2.png" class="original-slide active-slide">
+        <img src="/img/liner-photo/bass.png" class="original-slide">
+        <img src="/img/liner-photo/food-1.png" class="original-slide">
+        <img src="/img/liner-photo/gallery-1.png" class="original-slide">
+        <img src="/img/liner-photo/bass-2.png" class="original-slide">
+        <img src="/img/liner-photo/bass-3.png" class="original-slide">
+        <img src="/img/liner-photo/food-2.png" class="original-slide">
+        <img src="/img/liner-photo/inner-photo.png" class="original-slide">
+        <img src="/img/liner-photo/cafe-1.png" class="original-slide">
+        <img src="/img/liner-photo/food-3.png" class="original-slide">
+        <img id="lastSlide-original" src="/img/liner-photo/dining_room.png" class="original-slide">        
+        
+        <img id="firstSlide-clone" src="/img/liner-photo/room.png" class="clone-slide">
+        <img src="/img/liner-photo/room-2.png" class="clone-slide">
+        <img src="/img/liner-photo/bass.png" class="clone-slide">
+        <img src="/img/liner-photo/food-1.png" class="clone-slide">
+        <img src="/img/liner-photo/gallery-1.png" class="clone-slide">
+        <img src="/img/liner-photo/bass-2.png" class="clone-slide">
+        <img src="/img/liner-photo/bass-3.png" class="clone-slide">
+        <img src="/img/liner-photo/food-2.png" class="clone-slide">
+        <img src="/img/liner-photo/inner-photo.png" class="clone-slide">
+        <img src="/img/liner-photo/cafe-1.png" class="clone-slide">
+        <img src="/img/liner-photo/food-3.png" class="clone-slide">
+        <img id="lastSlide-clone" src="/img/liner-photo/dining_room.png" class="clone-slide">
+    </div>
+</div>
+
+
+<!--Scripts-->
+<script>
+    const galerySlider = document.querySelectorAll('.galery-slider > div > img');
+    const galeryWrapper = document.querySelector('.galery-slider > div');
+
+    const originalWrapper = document.querySelectorAll('.original-slide');
+    const cloneWrapper = document.querySelectorAll('.clone-slide')
+
+    let galeryIndent = -100;
+
+    for (let i = 0;i<galerySlider.length;i++) {
+        galerySlider[i].style.left = galeryIndent + "%";
+        galeryIndent += 100;
+    }
+
+    window.addEventListener('click', function(event) {
+        let activeSlide = galeryWrapper.querySelector('.active-slide');
+
+        if (event.target.dataset.action === 'galeryRight') {
+
+            let galeryAfter = Number((originalWrapper.length)) * 100;
+            
+            activeSlide.nextElementSibling.classList.add("active-slide");
+            activeSlide.classList.remove("active-slide")
+
+            if (document.querySelector('#lastSlide-clone').classList.contains('active-slide')) {
+                
+                for (let i = originalWrapper.length - 1;i>=0;i--) {
+                    document.querySelector('#lastSlide-clone').after(originalWrapper[i]);
+                    originalWrapper[i].style.left = Number(document.querySelector('#lastSlide-clone').style.left.replace("%", "")) + galeryAfter + '%';
+                    galeryAfter -= 100;
+                }
+
+            }
+
+            if (document.querySelector('#lastSlide-original').classList.contains('active-slide')) {
+                
+                for (let i = cloneWrapper.length - 1; i>=0; i--) {
+                    document.querySelector('#lastSlide-original').after(cloneWrapper[i]);
+                    cloneWrapper[i].style.left = Number(document.querySelector('#lastSlide-original').style.left.replace('%', '')) + galeryAfter + "%";
+                    galeryAfter -= 100;
+                }
+                
+            }
+
+            galerySlider.forEach(item => {
+                item.style.left = Number(item.style.left.replace("%", "")) - 100 + '%';
+            });
+            
+        }
+        if (event.target.dataset.action === "galeryLeft") {
+
+            let galeryBefore = Number((originalWrapper.length)) * 100;
+
+            activeSlide.previousElementSibling.classList.add("active-slide");
+            activeSlide.classList.remove("active-slide")
+
+            if (document.querySelector('#firstSlide-clone').classList.contains('active-slide')) {
+                
+                for (let i = 0; i < originalWrapper.length; i++) {
+                    document.querySelector('#firstSlide-clone').before(originalWrapper[i]);
+                    originalWrapper[i].style.left = Number(document.querySelector('#firstSlide-clone').style.left.replace("%", "")) - galeryBefore + "%";
+                    galeryBefore -= 100;
+                }
+
+            }
+
+            if (document.querySelector('#firstSlide-original').classList.contains('active-slide')) {
+
+                for (let i = 0;i<cloneWrapper.length;i++) {
+                    document.querySelector('#firstSlide-original').before(cloneWrapper[i]);
+                    cloneWrapper[i].style.left = Number(document.querySelector('#firstSlide-original').style.left.replace("%", "")) - galeryBefore + "%";
+                    galeryBefore -= 100;
+                }
+                
+            }
+
+            galerySlider.forEach(item => {
+                item.style.left = Number(item.style.left.replace("%", "")) + 100 + '%';
+            });
+
+
+        }
+    });
+    
+</script>

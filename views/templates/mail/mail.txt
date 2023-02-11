@@ -1,0 +1,21 @@
+
+<html lang="en">
+<body>
+    <div>
+        <p>ФИО: Шкарин Артём Александрович</p>
+        <p>Номер телефона: 54354353</p>
+        <p>Почта: fdskf@fdsfd</p>
+        <p>Дата отправления: 2022-11-23</p>
+        <p>Место отправления: Ялта</p>
+        <p>Пожелание: какое то</p>
+    </div>
+    <style>
+        body > div > p {
+            font-size: 20px;
+            padding: 10px 0;
+            font-family: sans-serif;
+        }
+    </style>
+</body>
+</html>
+    

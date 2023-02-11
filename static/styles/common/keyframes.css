@@ -1,0 +1,55 @@
+@keyframes pulse {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+        transform: scale(1.025);
+    }
+    70% {
+        transform: scale(1.05);
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes moove-fon {
+    0%, 100% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(5%);
+    }
+}
+
+@keyframes white-flare {
+    0% {
+        left:-110%;
+    }
+    15% {
+        left: 110%;
+    }
+    100% {
+        left: 110%;
+    }
+}
+
+@keyframes menuDown {
+    0% {
+        transform: translateY(-110px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes menuUp {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-110px);
+    }
+}

@@ -1,0 +1,29 @@
+.description p, .description li {
+    font-size: 1rem;
+}
+
+.description > div > h2 {
+    font-size: 2.3rem;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.description > div > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.description > div > div > div {
+    width: 49%;
+}
+
+.description > div > div > div p {
+    padding: 15px 0;
+}
+
+.description > div > div > div li {
+    padding: 5px 0;
+    list-style-type: disc;
+    width: 90%;
+    margin-left: 6%;
+}

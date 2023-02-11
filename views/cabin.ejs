@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1.0">
+    <title><%= cabinSolo.title %> | Лайнер название</title>
+    <%- include('./templates/common/link-common.ejs') %>
+    <link rel="stylesheet" href="/styles/cabin/cabin.css">
+    <link rel="stylesheet" href="/styles/common/keyframes.css">
+    <link rel="stylesheet" href="/styles/common/media.css">
+</head>
+<body>
+    <div>
+
+        <div style="background-color: #1f75fe;padding: 20px 0;">
+            <%- include('./templates/header.ejs') %>
+        </div>
+        
+        <div class="main-content-center cabin-main">
+            <div>
+                <h2><%= cabinSolo.title %></h2>
+
+                <div>
+                    <div class="cabin-galery">
+                        <img src=<%= cabinSolo.img %> alt="">
+                    </div>
+
+                    <div class="cabin-info">
+                        <div class="cabin-info-main">
+                            <p class="cabin-description"><%= cabinSolo.description %></p>
+
+                            <ul>
+                                <% if (cabinSolo.listFirst) { %>
+                                    <li><%= cabinSolo.listFirst %></li>
+                                <% } %>
+                                
+                                <% if (cabinSolo.listSecond) { %>
+                                <li><%= cabinSolo.listSecond %></li>
+                                <% } %>
+                            </ul>
+
+                            <p class="cabin-discounts"><i><%= cabinSolo.additionalInfo %></i></p>
+                        </div>
+
+                        <div class="cabin-info-price">
+                            <div>
+                                <p>от <h3><%= cabinSolo.price %> руб.</h3></p>
+                            </div>
+
+                            <a href="/bookingSeats" class="button-blue button-hover-black">Забронировать каюту</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <%-include('./templates/footer.ejs')  %>
+        </footer>
+    </div>
+</body>
+</html>

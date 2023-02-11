@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Круизы</title>
+    <%- include('./templates/common/link-common.ejs') %>
+    <link rel="stylesheet" href="/styles/site/photo-galery.css">
+    <link rel="stylesheet" href="/styles/site/reasons.css">
+    <link rel="stylesheet" href="/styles/site/include-price.css">
+    <link rel="stylesheet" href="/styles/site/cabins.css">
+    <link rel="stylesheet" href="/styles/site/find-out-seats.css">
+    <link rel="stylesheet" href="/styles/site/description.css">
+    <link rel="stylesheet" href="/styles/common/arrowMove.css">
+    <link rel="stylesheet" href="/styles/common/keyframes.css">
+    <link rel="stylesheet" href="/styles/common/media.css">
+</head>
+<body>
+    <div data-arrowMoveUp class="arrowUp">
+        <%- include('./templates/arrowMove.ejs') %>
+    </div>
+    
+    <div class="block-indent page-title">
+
+        <div class="header">
+            <%- include('./templates/header.ejs') %>
+        </div>
+        
+        <div class="main-content-center section-find-travel">
+            <div>
+                <h2>Единственный в России</h2>
+                <h2>черноморский круиз</h2>
+                <h3>на теплоходе-лайнере</h3>
+
+                <div>
+                    <a href="" class="button button-blue flare-button">
+                        Поиск круиза
+                        <span class="flare-white"></span>
+                    </a>
+
+                    <div class="button-line"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <main>
+
+        <div class="block-indent reasons-liner">
+            <div class="reasons-liner-fon"></div>
+            <%- include('./templates/reasons.ejs') %>
+        </div>
+    
+        <div id="galery" class="block-indent page-photo-galery">
+            <%- include('./templates/photo-galery.ejs') %>
+        </div>
+    
+        <div class="block-indent include-price">
+            <div class="include-price-fon"></div>
+            <%- include('./templates/include-price.ejs') %>
+        </div>
+    
+        <div id="cabins" class="block-indent cabins">
+            <%- include('./templates/cabins.ejs') %>
+        </div>
+    
+        <div class="block-indent find-out-seats">
+            <%- include('./templates/find-out-seats.ejs') %>
+        </div>
+    
+        <div id="description" class="block-indent description">
+            <%- include('./templates/description.ejs') %>
+        </div>
+
+    </main>
+
+    <footer id="footer">
+        <%- include('./templates/footer.ejs') %>
+    </footer>
+    
+    <script>
+        window.addEventListener('scroll', function() {
+        let windowScroll = window.scrollY;
+
+        const headerEl = document.querySelector('.header');
+        
+
+        if (windowScroll >= document.querySelector('.page-title').offsetHeight) {
+            document.querySelector('.header').classList.remove('header-up');
+
+            setTimeout(() => {
+            
+            headerEl.classList.add('header-white-fon');
+            headerEl.classList.add('header-fixed');
+
+            headerEl.classList.add('header-down');
+            }, 200);
+
+            document.querySelector('.section-find-travel > div').style.marginTop = `230px`;
+        } else if (windowScroll < document.querySelector('.page-title').offsetHeight && windowScroll > 100) {
+
+            headerEl.classList.remove('header-down');
+            headerEl.classList.add('header-up');
+
+            setTimeout(() => {
+                headerEl.classList.remove('header-white-fon');
+                headerEl.classList.remove('header-fixed');
+
+                headerEl.classList.remove('header-up');
+                document.querySelector('.section-find-travel > div').style.marginTop = `0px`;
+            }, 200);
+        }
+    });
+    </script>
+
+</body>
+</html>
